@@ -3,7 +3,7 @@ import React from 'react';
 export default function Menu(){
     return (
         <>
-            <h1>Menu</h1>
+            <button className='menu-item'>Tommy</button>
         </>
     )
 }
