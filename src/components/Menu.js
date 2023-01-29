@@ -1,9 +1,7 @@
 import React from 'react';
 
-export default function Menu(){
+export default function Menu({comp, displayJD}){
     return (
-        <>
-            <button className='menu-item'>Tommy</button>
-        </>
+            <button className='menu-item' onClick={()=>displayJD(comp)}>{comp}</button>
     )
 }
