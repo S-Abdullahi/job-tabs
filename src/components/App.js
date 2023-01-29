@@ -5,9 +5,8 @@ import Loading from "./Loading";
 
 export default function App() {
   const [jobData, setJobData] = useState([]);
-  const [job, setJob] = useState("");
   const [loading, setLoading] = useState(true);
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
 
   async function fetchData() {
     try {
@@ -34,24 +33,30 @@ export default function App() {
     );
   }
 
-  const company = jobData.map((data) => data.company);
+  //handle click function
+  function displayJD(ind) {
+    setValue(ind);
+  }
 
-  function displayJD(comp) {
-    const specficJD = jobData.findIndex((data) => data.company === comp);
-    setValue(specficJD)
-       }
-
-
-  const companyDisplay = company.map((comp) => {
-    return <Menu comp={comp} key={comp} displayJD={displayJD} />;
+  //display job company
+  const companyDisplay = jobData.map((menu, index) => {
+    return (
+      <Menu
+        menu={menu}
+        key={index}
+        index={index}
+        displayJD={displayJD}
+        value={value}
+      />
+    );
   });
 
   return (
     <div>
       <h1 className="title">Job Description</h1>
       <div className="main-con">
-        <div>{companyDisplay}</div>
-        <Description jobData={jobData} value={value}/>
+        <div className="menu-con">{companyDisplay}</div>
+        <Description jobData={jobData} value={value} />
       </div>
     </div>
   );

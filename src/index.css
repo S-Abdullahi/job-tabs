@@ -17,7 +17,7 @@ body {
 
 .main-con {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 2fr 5fr;
   align-items: flex-start;
   width: 70%;
   margin-top: 5rem;
@@ -30,13 +30,19 @@ body {
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 100;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
   background-color: white;
   border: solid 4px white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
-.menu-item:hover {
+.menu-con{
+  display: flex;
+  flex-direction: column;
+}
+.menu-item:hover, .active {
   border-left: solid 4px #617aec;
   color: #617aec;
 }
@@ -70,8 +76,9 @@ section {
 }
 
 .job-description {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.5rem;
+  font-weight: 100;
   color: rgb(83, 83, 83);
 }
 
@@ -90,4 +97,29 @@ section {
 .loading {
   font-size: 2rem;
   margin-top: 10rem;
+}
+
+
+.job-description-con{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon{
+  font-size: 1.5rem;
+  color: green;
+}
+
+@media screen and (max-width: 800px){
+  .main-con{
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .menu-con{
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
